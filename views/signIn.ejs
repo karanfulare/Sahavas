@@ -9,9 +9,9 @@
 <body>
     <h1> Sign In Here </h1>
     <div> 
-        <form action="" method="post">
-           <div>Email:</div> <input type="email" name="email" placeholder="Enter your email ">
-           <div>Password:</div> <input type="password" name="password" placeholder="Enter your password">
+        <form action="/users/create-session" method="post">
+           <div>Email:</div> <input type="email" name="email" placeholder="Enter your email " required>
+           <div>Password:</div> <input type="password" name="password" placeholder="Enter your password" required>
            <button type="submit"> Sign In </button>
         </form>
     </div>
