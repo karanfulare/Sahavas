@@ -9,7 +9,9 @@ router.get('/profile/edit',usersController.edit);
 router.get('/sign-up', usersController.signUp);
 router.get('/signin',usersController.signIn);
 
-router.post('/create',usersController.create);
+router.post ('/create',usersController.create);
+router.post('/create-session', usersController.createSession);
+router.post('/signout',usersController.signout);
 
 
 module.exports = router;           // if router.use requires a middleware fun but got a object error is there re write this line save and run 

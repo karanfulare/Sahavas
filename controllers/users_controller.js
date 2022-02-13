@@ -1,7 +1,23 @@
 const User = require ('../models/user');
 
 module.exports.profile=function(req,res){
-    res.end("<h1> This is Users Profile !!! </h1>");
+    
+    if(req.cookies.user_id){
+      User.findById(req.cookies.user_id,function(err,user){
+           if(user){
+                  res.render('user_profile',{
+                   title :"Sahavas | User-Profile",
+                   user:user});
+                   }
+              // return res.redirect('/users/signIn');  // async error cannot sent headers to client 
+          });
+       }
+    else{return res.redirect('/users/signIn'); }
+}
+
+module.exports.signout=function(req,res){
+         console.log("You have logged out !!")
+        return res.redirect('/')
 };
 
 
@@ -45,6 +61,25 @@ module.exports.create=function(req,res){
     });
 }
 // sign in and create a session 
-module.exports.createSession=function(res,req){
-    // TODO
-}
+module.exports.createSession=function(req,res){
+    // find the user
+    User.findOne({ email: req.body.email }, function(err, user){
+        console.log(req.body);
+        if(err){console.log('error finding user'); return}
+        // if found 
+
+        if(user){
+           // 
+           if(user.password != req.body.password){
+               return res.redirect('back');
+           }
+
+           res.cookie('user_id', user.id);
+           return res.redirect('/users/profile');
+        }
+        else{
+            return res.redirect('back');
+        }
+
+    });
+};
