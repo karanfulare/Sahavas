@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
+    <link rel="stylesheet" href="/css/signin.css">
 </head>
 <body>
     <h1> Sign In Here </h1>
-    <div> 
+    <div class="main"> 
         <form action="/users/create-session" method="post">
-           <div>Email:</div> <input type="email" name="email" placeholder="Enter your email " required>
-           <div>Password:</div> <input type="password" name="password" placeholder="Enter your password" required>
-           <button type="submit"> Sign In </button>
+           <div id="em">Email:</div> <input type="email" name="email" placeholder="Enter your email " required>
+           <div id="pass">Password:</div> <input type="password" name="password" placeholder="Enter your password" required>
+         <div id="but"><button type="submit" >Sign In </button> </div>  
         </form>
     </div>
     

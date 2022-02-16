@@ -1,0 +1,29 @@
+body{
+    align-content: center;
+}
+#but{
+    padding-top: 15px;
+}
+#em{
+    padding-bottom: 10px; 
+}
+#pass{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+input{
+    
+    height:22px;
+    width: 180px;
+    border-bottom-color: dodgerblue;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+button {
+    height: 20px;
+    width:80px;
+    color: rgb(247, 250, 252);
+    background-color: rgb(69, 107, 12);
+    border-radius: 10%;
+}

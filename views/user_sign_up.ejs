@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
+    <link rel="stylesheet" href="/css/user_sign_up.css">
 </head>
 <body>
     <h1>Register Here </h1>
 <div> 
     <form action="/users/create" method="POST">
-       <div>Email: <input type="email" name="email" placeholder="Enter your email " required></div>
-       <div>Password: <input type="password" name="password" placeholder="Enter your password" required></div>
-       <div>Confirm Password: <input type="password" name="confirm_password" placeholder="Confirm Password" required></div>
-       <div>Name: <input type="text" name="name" placeholder="Enter your Name" required></div>
-       <button type="submit">Register</button>
+       <div id="em">Email:</div> <div><input type="email" name="email" placeholder="Enter your email " required></div>
+       <div id="pass">Password:</div> <div><input type="password" name="password" placeholder="Enter your password" required></div>
+       <div id="pass">Confirm Password:</div> <div><input type="password" name="confirm_password" placeholder="Confirm Password" required></div>
+       <div id="name">Name:</div><div> <input type="text" name="name" placeholder="Enter your Name" required></div>
+       <div id="but"><button type="submit">Register</button></div>
     </form>
 </div>
 </body>
