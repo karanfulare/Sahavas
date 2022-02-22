@@ -18,6 +18,19 @@
     <textarea name="content" cols="30" rows="3" placeholder="Type Something"></textarea>
     <input type="submit" value="Post">
 </form>
+<div id="posts-list-container">
+<ul>
+    <% for(post of posts){ %> 
+        
+        <li>
+            <%= post.content %>
+        </li>
+        
+        <% } %>
+</ul>
+
+
+</div>
 
 
 </section>
