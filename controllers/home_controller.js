@@ -19,6 +19,9 @@ Post.find({}).populate('user').exec(function(err,posts){
     });
     
 })
+
+
+
 }
 
 // module.exports.homeInDark = function(req,res){
