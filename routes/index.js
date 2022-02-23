@@ -8,6 +8,7 @@ router.get('/', homeController.home);         // this means for "/" path ie home
 //router.get('/color',homeController.homeInDark);          // see line 5-7 of home_controller
 router.use('/users', require('./users'));       // this handels the other route 
 router.use('/posts', require ('./posts'));
+router.use('/comments', require ('./comments'));
 
 module.exports = router ;
 
