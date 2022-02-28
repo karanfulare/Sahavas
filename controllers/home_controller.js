@@ -1,4 +1,5 @@
 const Post = require('../models/post');
+const User = require('../models/user');
 
 module.exports.home = function (req, res) {                      //modules.exports.Actionname=callback function ;
     // res.end("<h1> This is my Controller !!! </h1>");
@@ -20,14 +21,17 @@ module.exports.home = function (req, res) {                      //modules.expor
             path:'user'
         }
     }) 
-    .exec(
-        function(err, posts) {
-        return res.render('home', {
-            title: " Sahavas | Home ",
-            posts: posts
-        });
+    .exec(function(err, posts) {
 
-    });
+        User.find({}, function(err, users){
+            return res.render('home', {
+                title: " Sahavas | Home ",
+                posts: posts,
+                all_users: users
+            });
+    
+        });
+    })
 }
 
 // module.exports.homeInDark = function(req,res){
