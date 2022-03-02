@@ -1,7 +1,8 @@
+body{
+    margin: 0;
+    /* text-align: center; */
 
-
-
-body {
-    background-image: linear-gradient(to right,rgb(209, 127, 209), rgb(194, 141, 233), blue, rgb(137, 228, 137), yellow, orange, rgb(226, 114, 114));
-     text-align: center;
- } 
+    #layout-main{
+        height: 100%;
+    }
+}

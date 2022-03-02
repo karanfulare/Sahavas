@@ -1,51 +1,9 @@
-header{
-    background-color: rgb(41, 134, 241);
-    font-family:sans-serif;
-    display: flex;
-    justify-content: space-between;
-    margin: 0%;
-    width: 100%;
-    /* position:static; ////////////////check this later */
-}
-header h2{
-    color: aliceblue;
-    font-weight:bold;
-    margin-left: 10px;
-    color: linear-gradient(to right,rgb(209, 127, 209), rgb(194, 141, 233), blue, rgb(137, 228, 137), yellow, orange, rgb(226, 114, 114));
-}
-
-header ul {
-    margin-top: 25px;
-}
-header li{
-   display: inline;
-   padding-right: 10px;
-   
-}
-header a {
-    text-decoration: none;
-    color: beige;
-}
-
-
-
 body {
-    margin: 0%;
-    background-color: azure;
-     text-align: center;
-     overflow:scroll;
- } 
+  margin: 0;
+  /* text-align: center; */
+}
+body #layout-main {
+  height: 100%;
+}
 
-
- footer{
-     padding-left: 10px;
-     color:rgb(238, 208, 208);
-     position:sticky;
-     bottom: 0;
-     width:100%;
-     height:auto;
-     background-color: rgba(32, 34, 36, 0.719);
-     display:flex;
-     align-content:space-between;
-
- }
+/*# sourceMappingURL=layout.css.map */
