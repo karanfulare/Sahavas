@@ -1,9 +1,12 @@
 #layout-footer {
   color: white;
-  background: grey;
+  background: rgb(15, 15, 15);
   padding: 5px 10px;
   display: flex;
+  position:absolute;
+  bottom: 0;
   justify-content: flex-start;
+  width: 100vw;
 }
 #layout-footer a {
   color: white;
