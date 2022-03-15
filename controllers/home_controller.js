@@ -1,7 +1,7 @@
 const Post = require('../models/post');
 const User = require('../models/user');
 
-module.exports.home = function (req, res) {                      //modules.exports.Actionname=callback function ;
+module.exports.home = async function (req, res) {                      //modules.exports.Actionname=callback function ;
     // res.end("<h1> This is my Controller !!! </h1>");
     // console.log(req.cookies);
     // res.cookie('user_id',22);
@@ -11,30 +11,28 @@ module.exports.home = function (req, res) {                      //modules.expor
     //     posts : posts
     // });
     //   })
-
+    
+  try{
     // populate the user of each post 
-    Post.find({})
+    let posts = await Post.find({})
     .populate('user')
     .populate({
         path: 'comments',
         populate:{
             path:'user'
         }
-    }) 
-    .exec(function(err, posts) {
+    });
+    let users = await User.find({});
 
-        User.find({}, function(err, users){
             return res.render('home', {
                 title: " Sahavas | Home ",
                 posts: posts,
                 all_users: users
             });
     
-        });
-    })
+        } catch(err){
+            console.log('Error'.err);
+        }
+    
 }
-
-// module.exports.homeInDark = function(req,res){
-//     res.end('in dark ');
-// };
 

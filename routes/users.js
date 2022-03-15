@@ -17,7 +17,7 @@ router.post('/create-session',passport.authenticate(
     {failureRedirect:'/user/signin'}
 ),usersController.createSession);
 
-router.get('/sign-out',usersController.destroySession);
+router.get('/sign-out', usersController.destroySession);
 
 
 module.exports = router;           // if router.use requires a middleware func but got a object error is there re write this line save and run 
