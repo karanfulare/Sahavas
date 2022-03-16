@@ -13,6 +13,7 @@ module.exports.profile=function(req,res){
 module.exports.update = function(req,res){
     if(req.user.id == req.params.id){
         User.findByIdAndUpdate(req.params.id, req.body, function(err,user){
+            req.flash('success','Updated!');
             return res.redirect('back');
         });
     }
@@ -49,19 +50,21 @@ if(req.isAuthenticated()){
 //get the sign up data
 module.exports.create=function(req,res){
     if(req.body.password != req.body.confirm_password){
+        req.flash('error', 'Passwords do not match');
         return res.redirect('back');
     }
 
     User.findOne({email: req.body.email}, function(err,user){
-        if(err){console.log('Error finding user '); return}
+        if(err){req.flash('Error finding user ',err); return}
 
         if(!user){
             User.create(req.body, function(err,user){
-                if(err){console.log('Error creating user '); return}
+                if(err){req.flash('Error finding user ',err); return}
 
                 return res.redirect('/users/signin');
             })
         } else{
+            req.flash('success', 'You have signed up, login to continue!');
             return res.redirect('back');
         }
     });
