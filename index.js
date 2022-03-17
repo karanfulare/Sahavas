@@ -20,6 +20,8 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 
 app.use(express.static('./assests'));
+// making the uploads path available to browser
+app.use('/uploads',express.static(__dirname + '/uploads'));
 app.use(expressLayouts);
 
 // EXTRACT sTYLES AND SET THEM IN LAYOUT EJS at proper place
