@@ -10,6 +10,8 @@ router.use('/users', require('./users'));       // this handels the other route
 router.use('/posts', require ('./posts'));
 router.use('/comments', require ('./comments'));
 
+router.use('/api',require('./api'));
+
 module.exports = router ;
 
 

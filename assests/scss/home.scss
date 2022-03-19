@@ -13,3 +13,18 @@
         height: 100%;
     }
 }
+
+#posts-list-container{
+    ul{
+        border: 1px rgb(238, 8, 8) solid;
+        margin: 15px ;
+    
+        box-shadow: 5px 1px 5px 1px #888888;
+    }
+}
+
+#feed-posts{
+    border: 2px black solid;
+    margin: 5%;
+    box-shadow: 5px 10px 5px 10px #888888;
+}

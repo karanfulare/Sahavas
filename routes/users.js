@@ -19,5 +19,9 @@ router.post('/create-session',passport.authenticate(
 
 router.get('/sign-out', usersController.destroySession);
 
+router.get('/auth/google', passport.authenticate('google',{scope: ['profile','email']}));
+router.get('/auth/google/callback', passport.authenticate('google', {failureRedirect:'/user/signin'}), usersController.createSession);
+
+
 
 module.exports = router;           // if router.use requires a middleware func but got a object error is there re write this line save and run 
