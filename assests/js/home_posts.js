@@ -12,7 +12,7 @@
                 data: newPostForm.serialize(),
                 success: function(data){
                     let newPost = newPostDom(data.data.post);
-                    $('#posts-list-container>ul').prepend(newPost);
+                    $('#posts-list-container > ul').prepend(newPost);
                     deletePost($(' .delete-post-button', newPost));
 
                     // call the create comment class
@@ -105,11 +105,12 @@
         $('#posts-list-container>ul>li').each(function(){
             let self = $(this);
             let deleteButton = $(' .delete-post-button', self);
+            console.log('***********',deleteButton);
             deletePost(deleteButton);
 
             // get the post's id by splitting the id attribute
             let postId = self.prop('id').split("-")[1]
-            new PostComments(postId);
+            // new PostComments(postId);
         });
     }
 
